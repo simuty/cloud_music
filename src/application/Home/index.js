@@ -7,10 +7,6 @@ import { Top, Tab, TabItem } from './style';
 
 function Home(props) {
     const { route, history } = props;
-    const gotoOther = () => {
-        history.push('/rank', {});
-    };
-
     return (
         <div>
             <Top>
