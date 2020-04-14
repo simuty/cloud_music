@@ -9,7 +9,7 @@
 1. react v16.8全家桶(react，react-router，react-redux) : 用于构建用户界面的 MVVM 框架
 2. redux: 著名JavaScript状态管理容器；
 3. redux-thunk: 处理异步逻辑的redux中间件；
-4. immer: 持计划数据结构处理； ～～immutable: Facebook历时三年开发出的进行持久性数据结构处理的库～～
+4. immer: 持计划数据结构处理； ~~immutable: Facebook历时三年开发出的进行持久性数据结构处理的库~~
 5. react-lazyload: react懒加载库better-scroll: 提升移动端滑动体验的知名库
 6. styled-components: 处理样式，体现css in js的前端工程化神器
 7. axios: 用来请求后端api的数据。
