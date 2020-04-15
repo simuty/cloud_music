@@ -25,4 +25,70 @@ Thunks are the recommended middleware for basic Redux side effects logic, includ
 
 
 https://simuty.com/2020/04/10React%E7%B3%BB%E5%88%97-Redux/
+
+
+
+第一部分 引入redux分以下几步骤
+
+1. 参考 https://simuty.com/2020/04/10React%E7%B3%BB%E5%88%97-Redux/
+
+2. 调试工具
+
+3. 注意事项
+
+// !craate store 的参数，各个reducer，这个别名，就是之后在component中使用的名称! 
+export default combineReducers({
+    // !这个名字recommend 即是 mapStateToProps中的参数
+    recommend: recommendReducer,
+});
+
+// !recommend 对照reducers中的别名
+const mapStateToProps = ({ recommend }) => ({
+    bannerList: recommend.bannerList,
+    recommendList: recommend.recommendList,
+});
+
+
+第二部分 immer 与调试技巧
+
+redux-devtools-extension
+
+https://blog.csdn.net/achenyuan/article/details/80884895
+
+
+immer 注意事项
+
+1. 
+const recommendReducer = produce((draft = defaultState, action) => {
+    switch (action.type) {
+        case actionTypes.CHANGE_BANNER:
+            draft.bannerList = action.data;
+            // !返回数据方式
+            return draft;
+        case actionTypes.CHANGE_RECOMMEND_LIST:
+            draft.recommendList = action.data;
+            return draft;
+        default: {
+            return draft;
+        }
+    }
+});
+
+
+第三部分 recommend 模块采用 class 方式
+
+
+在此默认调用函数
+
+componentDidMount() {
+        // 1. 自动调用
+        this.props.getBannerDataDispatch();
+        this.props.getRecommendListDataDispatch();
+    }
+
+
+
+
 */
+
+

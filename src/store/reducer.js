@@ -1,14 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import { combineReducers } from 'redux';
 
-function mapStateToProps(state) {
-    return {};
-}
+import { reducer as recommendReducer } from '../application/Recommend/store/index';
 
-class reducer extends Component {
-    render() {
-        return <div>ssss</div>;
-    }
-}
-
-export default connect(mapStateToProps)(reducer);
+export default combineReducers({
+    // !这个名字recommend 即是 mapStateToProps中的参数
+    recommend: recommendReducer,
+});
